@@ -63,7 +63,7 @@ export default {
       title: 'Contact',
       viewName: 'home',
       externalLinks: [{
-        url: 'https://www.linkedin.com/in/dasha-utyuzh-50a63420',
+        url: '',
         name: 'LinkedIn'
       }],
       tagline: 'Dasha Utyuzh',
@@ -90,11 +90,11 @@ export default {
         this.formInvalid = false
         this.isLoading = true
         this.formSubmitted = false
-        emailjs.init('user_VgK1fc8fDXUXjviJQWT13')
+        emailjs.init('user_id')
         this.contact_number = Math.random() * 100000 | 0
         emailjs.send(
-          'service_gvafrqj',//get this from emailjs dashboard
-          'template_032ph1k',//get this from emailjs dashboard
+          'provider_code',//get this from emailjs dashboard
+          'template_code',//get this from emailjs dashboard
           {email: this.email, name: this.name, message: this.message}
         ).then((response) => {
           this.formSubmitted = true
